@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GraphComponent} from "../graph/graph.component";
 
 @Component({
@@ -7,6 +7,7 @@ import { GraphComponent} from "../graph/graph.component";
   styleUrls: ['./indicator.component.css']
 })
 export class IndicatorComponent implements OnInit {
+  @Input() country: string;
 
   constructor() { }
 

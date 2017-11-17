@@ -25,7 +25,12 @@ public class Survey{
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "survey",cascade = CascadeType.ALL)
-    private Set<AgeGroups> agegroups;
+    private Set<AgeGroup> agegroups;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "indicator_id_fk")
+    private Indicator indicator;
 
     public Survey(String country, float value, String company) {
         this.country = country;
@@ -65,11 +70,11 @@ public class Survey{
         this.company = company;
     }
 
-    public Set<AgeGroups> getAgegroups() {
+    public Set<AgeGroup> getAgegroups() {
         return agegroups;
     }
 
-    public void setAgegroups(Set<AgeGroups> agegroups) {
+    public void setAgegroups(Set<AgeGroup> agegroups) {
         this.agegroups = agegroups;
     }
 

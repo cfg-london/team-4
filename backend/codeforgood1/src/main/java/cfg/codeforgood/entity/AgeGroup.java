@@ -1,13 +1,26 @@
 package cfg.codeforgood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "agegroups")
-public class AgeGroups {
+@Table(name = "agegroup")
+public class AgeGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    public AgeGroup() {
+    }
+
+    public AgeGroup(long lower_bound, long upper_bound, float value, Survey survey) {
+
+        this.lower_bound = lower_bound;
+        this.upper_bound = upper_bound;
+        this.value = value;
+        this.survey = survey;
+    }
 
     @Column(name = "lower_bound")
     private long lower_bound;
@@ -17,6 +30,11 @@ public class AgeGroups {
 
     @Column(name = "val")
     private float value;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "survey_id_fk")
+    private Survey survey;
 
     public long getId() {
         return id;

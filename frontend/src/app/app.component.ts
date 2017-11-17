@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MapComponent } from './map/map.component';
+import { IndicatorComponent} from "./indicator/indicator.component";
 
 @Component({
   selector: 'app-root',

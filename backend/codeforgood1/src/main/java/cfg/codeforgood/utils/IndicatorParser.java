@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 interface IndicatorDBConstants {
@@ -22,14 +23,10 @@ public class IndicatorParser {
         catch (Exception e) { e.printStackTrace();}
     }
 
-    public void parse() {
+    public HashMap<String, Integer> parse() {
+
+        HashMap<String, Integer> hmIndicator = new HashMap();
         try {
-            if (!br.ready()) {
-                return;
-            }
-
-
-
             String line;
 
             int counter = 1;
@@ -38,6 +35,8 @@ public class IndicatorParser {
                 StringTokenizer st = new StringTokenizer(line, "\t");
                 String name = st.nextToken();
                 String description = st.nextToken();
+
+                hmIndicator.put(name, counter);
 
                 String myquery = IndicatorDBConstants.INSERT;
                 myquery += "\'" + counter + "\', ";
@@ -61,6 +60,8 @@ public class IndicatorParser {
             bw.close();
         }
         catch (Exception e) {e.printStackTrace();}
+
+        return hmIndicator;
     }
 }
 

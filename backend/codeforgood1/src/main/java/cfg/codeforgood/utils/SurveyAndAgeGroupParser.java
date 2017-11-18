@@ -10,8 +10,18 @@ class Pair<L,R> {
     private L l;
     private R r;
 
+    public Pair(){}
+
     public Pair(L l, R r) {
         this.l = l;
+        this.r = r;
+    }
+
+    public void setFirst(L l) {
+        this.l = l;
+    }
+
+    public void setSecond(R r) {
         this.r = r;
     }
 
@@ -30,6 +40,25 @@ public class SurveyAndAgeGroupParser {
         try {
             this.br = new BufferedReader(new FileReader("src/main/extras/survey_age.csv"));
             this.bw = new BufferedWriter(new FileWriter("src/main/resources/data.sql", true));
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+
+    public SurveyAndAgeGroupParser(){
+        hmIndicator = new HashMap<>();
+        try {
+            this.br = new BufferedReader(new FileReader("src/main/extras/survey_age.csv"));
+            this.bw = new BufferedWriter(new FileWriter("src/main/resources/data.sql", true));
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+
+    public SurveyAndAgeGroupParser(String inFile, String outFile, HashMap<String, Integer> hmIndicator) {
+        this.hmIndicator = hmIndicator;
+
+        try {
+            this.br = new BufferedReader(new FileReader(inFile));
+            this.bw = new BufferedWriter(new FileWriter(outFile, true));
         }
         catch (Exception e) {e.printStackTrace();}
     }

@@ -20,6 +20,14 @@ public class IndicatorParser {
         catch (Exception e) { e.printStackTrace();}
     }
 
+    public IndicatorParser(String inFile, String outFile) {
+        try {
+            br = new BufferedReader(new FileReader(inFile));
+            bw = new BufferedWriter(new FileWriter(outFile));
+        }
+        catch (Exception e) {e.printStackTrace();}
+    }
+
     public HashMap<String, Integer> parse() {
 
         HashMap<String, Integer> hmIndicator = new HashMap<>();

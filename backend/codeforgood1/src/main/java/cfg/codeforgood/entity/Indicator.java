@@ -74,4 +74,15 @@ public class Indicator {
     public void setSurveys(Set<Survey> surveys) {
         this.surveys = surveys;
     }
+
+    @Override
+    public String toString() {
+        return "Indicator{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                ", surveys=" + surveys +
+                '}';
+    }
 }

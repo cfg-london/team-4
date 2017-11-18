@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from "../data.service";
-import { Ng4DropdownModule } from 'ng4-material-dropdown';
 
 @Component({
   selector: 'app-map',

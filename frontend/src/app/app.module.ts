@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import { Ng4DropdownModule } from 'ng4-material-dropdown';
 
 
 import { AppComponent } from './app.component';
@@ -22,8 +21,7 @@ import { DataService } from './data.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxChartsModule,
-    Ng4DropdownModule
+    NgxChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

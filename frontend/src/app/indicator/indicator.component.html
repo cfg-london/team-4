@@ -1,11 +1,12 @@
-<p>
-  indicator works!
-</p>
-<div *ngFor="let cat of categories" (click)="selectCategory(cat)">
-  {{cat}}
+
+<div class="buttons">
+  <h4 class="title">Please choose the categories and age group</h4>
+
+  <button type="button" class="btn btn-outline-primary" *ngFor="let cat of categories" (click)="selectCategory(cat)">
+    {{cat}}</button>
+
+  <button type="button" class="btn btn-outline-primary" *ngFor="let ageGroup of ageGroups" (click)="selectAgeGroup(ageGroup)">
+    {{ageGroup}}</button>
 </div>
 
-<div *ngFor="let ageGroup of ageGroups" (click)="selectAgeGroup(ageGroup)">
-  {{ageGroup}}
-</div>
   <app-graph [data]="graphInfo"></app-graph>

@@ -5,7 +5,74 @@ export class DataService {
   categoryInfo: any;
 
   constructor() {
-    this.categoryInfo = {}
+    this.categoryInfo = {
+      'Sex Education': [
+          ['are using contraception', {
+          '15-19': '50',
+          '20-29': '73.5',
+          '30-39': '82.6'
+          }],
+          ['are circumcised', {
+            '15-19': '2',
+            '20-29': '12',
+            '30-39': '20'
+          }],
+          ['experienced sexual violence before 18', {
+            '15-19': '37.4',
+            '20-29': '24.4',
+            '30-39': '40.2'
+          }],
+          ['died after childbirth', {
+            '15-19': '5.2',
+            '20-29': '2.3',
+            '30-39': '3.7'
+          }],
+      ],
+      'Education': [
+        ['are literate', {
+          '15-19': '44.9',
+          '20-29': '42.1',
+          '30-39': '40.8'
+        }],
+        ['worked in the last 12 months', {
+          '15-19': '29',
+          '20-29': '51.5',
+          '30-39': '60.4'
+        }],
+        ['attended secondary or higher education', {
+          '15-19': '91',
+          '20-29': '80',
+          '30-39': '59.9'
+        }],
+        ['attended school regurarly', {
+          '15-19': '41.5',
+          '20-29': '64.7',
+          '30-39': '33.9'
+        }]
+      ],
+      'Family': [
+        ['victim of domestic violence', {
+          '15-19': '14.6',
+          '20-29': '22.4',
+          '30-39': '24.5'
+        }],
+        ['who decide what to do with their earnings', {
+          '15-19': '59.6',
+          '20-29': '60.7',
+          '30-39': '67.3'
+        }],
+        ['beaten justified for one specific reason', {
+          '15-19': '2',
+          '20-29': '2.3',
+          '30-39': '2.7'
+        }],
+        ['earn more money than husband', {
+          '15-19': '9.3',
+          '20-29': '15.2',
+          '30-39': '18.3'
+        }]
+      ]
+    };
   }
 
   getCountries() {
@@ -13,42 +80,15 @@ export class DataService {
   }
 
   getCategories() {
-    return ['Education', 'Family', 'Health'];
+    return ['Education', 'Family', 'Sex Education'];
   }
 
   getInfoByCategory(category: string) {
-    if (this.categoryInfo[category]) {
-      console.log("Return cached info for " + category);
       return this.categoryInfo[category];
-    }
-    //make get request
-    this.categoryInfo[category] = [
-      ['indicator1', {
-        '15-19': '20',
-        '20-29': '22',
-        '30-39': '5'
-      }],
-      ['indicator2', {
-        '15-19': '4',
-        '30-39': '6'
-      }]
-    ];
-
-    return [
-      ['indicator1', {
-        '15-19': '20',
-        '20-29': '22',
-        '30-39': '5'
-      }],
-      ['indicator2', {
-        '15-19': '4',
-        '30-39': '6'
-      }]
-      ];
   }
 
   getAgeGroups() {
-    return ['15-19', '20-29', '30-39', '40-49'];
+    return ['15-19', '20-29', '30-39'];
   }
 
   // // list of [indicatorname, percentage]

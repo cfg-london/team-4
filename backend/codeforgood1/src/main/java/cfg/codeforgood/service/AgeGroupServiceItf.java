@@ -9,4 +9,6 @@ import java.util.List;
 public interface AgeGroupServiceItf {
 
     List<AgeGroup> getAll();
+
+//    List<AgeGroup> getDistinctAges();
 }

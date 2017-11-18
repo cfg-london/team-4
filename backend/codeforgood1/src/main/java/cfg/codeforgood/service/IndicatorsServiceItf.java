@@ -9,4 +9,6 @@ import java.util.List;
 public interface IndicatorsServiceItf {
 
     List<Indicator> getAll();
+
+    List<String> getDistinctCategories();
 }

@@ -19,4 +19,11 @@ public class AgeGroupServiceImpl implements AgeGroupServiceItf {
     public List<AgeGroup> getAll() {
         return ageGroupRepository.findAll();
     }
+
+
+//    public List<AgeGroup> getDistinctAges() {
+//        return ageGroupRepository.findDistinctByAgerange();
+//    }
+
+
 }

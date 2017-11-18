@@ -14,19 +14,14 @@ public class AgeGroup {
     public AgeGroup() {
     }
 
-    public AgeGroup(long lower_bound, long upper_bound, float value, Survey survey) {
-
-        this.lower_bound = lower_bound;
-        this.upper_bound = upper_bound;
+    public AgeGroup(String agerange, float value, Survey survey) {
+        this.agerange = agerange;
         this.value = value;
         this.survey = survey;
     }
 
-    @Column(name = "lower_bound")
-    private long lower_bound;
-
-    @Column(name = "upper_bound")
-    private long upper_bound;
+    @Column(name = "agerange")
+    private String agerange;
 
     @Column(name = "val")
     private float value;
@@ -44,20 +39,20 @@ public class AgeGroup {
         this.id = id;
     }
 
-    public long getLower_bound() {
-        return lower_bound;
+    public String getAgerange() {
+        return agerange;
     }
 
-    public void setLower_bound(long lower_bound) {
-        this.lower_bound = lower_bound;
+    public void setAgerange(String agerange) {
+        this.agerange = agerange;
     }
 
-    public long getUpper_bound() {
-        return upper_bound;
+    public Survey getSurvey() {
+        return survey;
     }
 
-    public void setUpper_bound(long upper_bound) {
-        this.upper_bound = upper_bound;
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
     }
 
     public float getValue() {

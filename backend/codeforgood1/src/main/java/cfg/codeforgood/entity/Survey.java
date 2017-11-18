@@ -17,9 +17,6 @@ public class Survey{
     @Column(name = "country")
     private String country;
 
-    @Column(name = "value")
-    private float value;
-
     @Column(name = "company")
     private String company;
 
@@ -32,9 +29,8 @@ public class Survey{
     @JoinColumn(name = "indicator_id_fk")
     private Indicator indicator;
 
-    public Survey(String country, float value, String company) {
+    public Survey(String country, String company) {
         this.country = country;
-        this.value = value;
         this.company = company;
     }
 
@@ -52,14 +48,6 @@ public class Survey{
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    public void setValue(float value) {
-        this.value = value;
     }
 
     public String getCompany() {
@@ -83,7 +71,6 @@ public class Survey{
         return "Survey{" +
                 "id=" + id +
                 ", country='" + country + '\'' +
-                ", value=" + value +
                 ", company='" + company + '\'' +
                 ", agegroups=" + agegroups +
                 '}';

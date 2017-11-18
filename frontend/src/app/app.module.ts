@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { GraphComponent } from './graph/graph.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { GraphComponent } from './graph/graph.component';
     BrowserAnimationsModule,
     NgxChartsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

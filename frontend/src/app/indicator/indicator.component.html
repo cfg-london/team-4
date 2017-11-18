@@ -1,4 +1,11 @@
 <p>
   indicator works!
-  <app-graph></app-graph>
 </p>
+<div *ngFor="let cat of categories" (click)="selectCategory(cat)">
+  {{cat}}
+</div>
+
+<div *ngFor="let ageGroup of ageGroups" (click)="selectAgeGroup(ageGroup)">
+  {{ageGroup}}
+</div>
+  <app-graph></app-graph>

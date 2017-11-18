@@ -1,5 +1,29 @@
-<p>
-  map works!
-</p>
+<ng4-dropdown>
+  <ng4-dropdown-button>
+    Open Menu
+  </ng4-dropdown-button>
+  <ng4-dropdown-menu>
+    <ng4-menu-item *ngFor="let country of countries">
+      {{ country }}
+    </ng4-menu-item>
 
+    <div class='ng4-menu-divider'></div>
+
+    <ng4-menu-item>
+      With Divider
+    </ng4-menu-item>
+  </ng4-dropdown-menu>
+</ng4-dropdown>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Country
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <!--<button class="dropdown-item" type="button" *ngFor="let country of countries">{{country}}</button>-->
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
 <app-indicator [country]="selectedCountry"></app-indicator>

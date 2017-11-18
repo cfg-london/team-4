@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService} from "../data.service";
+import { Ng4DropdownModule } from 'ng4-material-dropdown';
 
 @Component({
   selector: 'app-map',
@@ -6,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  chosenCountry = "";
+  selectedCountry: any;
+  countries: any;
 
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
+    this.countries = this._dataService.getCountries();
+    console.log(this.countries);
+    this.selectedCountry = "";
+  }
+
+  selectCountry(country) {
+    this.selectedCountry = country;
   }
 
 }

@@ -18,7 +18,7 @@ public class Indicator {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 1000)
     private String description;
 
     @JsonIgnore

@@ -2,4 +2,40 @@
   map works!
 </p>
 
+    <body ng-app="app" ng-controller="selectDropdown">
+            <div>
+                Country:
+                <select ng-model="userSelect" ng-options=" item as item for item in a">
+                    <option value="">--Select--</option>
+                </select>
+                <input type="button" value="submit" ng-click="checkselection()">
+                <span color:red>{{msg}}</span>
+            </div>
+        </body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+        <script>
+            var app=angular.module('app',[]);
+
+            app.factory('Brandtest',function(){
+                var brand={};
+                brand.sample=['El Salvador','Columbia','Sengal','Kenya','India','Indonesia'];
+                return brand;
+            });
+
+            app.controller('selectDropdown',['$scope','Brandtest',function($scope,Brandtest){
+                $scope.a=Brandtest.sample;
+
+               $scope.checkselection= function(){
+                    if($scope.userSelect !="" && $scope.userSelect !=undefined){
+                    $scope.msg = $scope.userSelect;
+
+
+            }
+            }
+            }]);
+        </script>
+
 <app-indicator [country]="selectedCountry"></app-indicator>

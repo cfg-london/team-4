@@ -11,5 +11,4 @@ import java.util.List;
 @Repository
 public interface AgeGroupRepository extends JpaRepository<AgeGroup, Long> {
 
-//    List<AgeGroup> findAg();
 }

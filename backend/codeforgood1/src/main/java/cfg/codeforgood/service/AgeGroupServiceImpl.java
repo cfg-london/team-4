@@ -21,9 +21,5 @@ public class AgeGroupServiceImpl implements AgeGroupServiceItf {
     }
 
 
-//    public List<AgeGroup> getDistinctAges() {
-//        return ageGroupRepository.findDistinctByAgerange();
-//    }
-
 
 }

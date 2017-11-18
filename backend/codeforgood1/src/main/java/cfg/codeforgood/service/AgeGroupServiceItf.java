@@ -10,5 +10,4 @@ public interface AgeGroupServiceItf {
 
     List<AgeGroup> getAll();
 
-//    List<AgeGroup> getDistinctAges();
 }

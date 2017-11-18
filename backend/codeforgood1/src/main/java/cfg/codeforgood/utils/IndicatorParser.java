@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class IndicatorParser {
@@ -21,7 +22,7 @@ public class IndicatorParser {
 
     public HashMap<String, Integer> parse() {
 
-        HashMap<String, Integer> hmIndicator = new HashMap();
+        HashMap<String, Integer> hmIndicator = new HashMap<>();
         try {
             String line;
 

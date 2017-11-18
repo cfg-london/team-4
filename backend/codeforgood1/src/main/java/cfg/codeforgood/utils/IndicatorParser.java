@@ -7,10 +7,6 @@ import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-interface IndicatorDBConstants {
-    String INSERT = "INSERT INTO `codeforgood`.`indicator` (`id`, `description`, `name`, `type`) VALUES (";
-}
-
 public class IndicatorParser {
     private BufferedReader br;
     private BufferedWriter bw;

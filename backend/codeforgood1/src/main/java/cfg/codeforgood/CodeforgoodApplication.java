@@ -1,5 +1,6 @@
 package cfg.codeforgood;
 
+import cfg.codeforgood.utils.DBParser;
 import cfg.codeforgood.utils.IndicatorParser;
 import cfg.codeforgood.utils.SurveyAndAgeGroupParser;
 import org.springframework.boot.SpringApplication;
@@ -11,11 +12,7 @@ import java.util.HashMap;
 public class CodeforgoodApplication {
 
 	public static void main(String[] args) {
-		IndicatorParser ip = new IndicatorParser();
-		HashMap<String, Integer> ret = ip.parse();
-		SurveyAndAgeGroupParser sap = new SurveyAndAgeGroupParser(ret);
-		sap.parse();
-
+		DBParser.doWork();
 		SpringApplication.run(CodeforgoodApplication.class, args);
 	}
 }

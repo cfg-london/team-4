@@ -1,20 +1,10 @@
 package cfg.codeforgood.utils;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-interface SurveyDBConstants {
-    String INSERT = "INSERT INTO `codeforgood`.`survey` (`id`, `company`, `country`, `indicator_id_fk`) VALUES (";
-}
-
-interface AgeGroupDBConstants {
-    String INSERT = "INSERT INTO `codeforgood`.`agegroup` (`id`, `agerange`, `val`, `survey_id_fk`) VALUES (";
-}
 
 class Pair<L,R> {
     private L l;
@@ -44,27 +34,31 @@ public class SurveyAndAgeGroupParser {
         catch (Exception e) {e.printStackTrace();}
     }
 
-    public void parse() {
+    public void parseFirstLine(ArrayList<Pair<String, ArrayList<String>>> nameDelims) throws IOException{
+        //Initial info from first line
+        StringTokenizer st = new StringTokenizer(br.readLine(), ",", true);
+        st.nextToken();
+        st.nextToken();
+        st.nextToken();
+        String name = st.nextToken();
+        do {
+            String delim = "";
+            ArrayList<String> categs = new ArrayList<>();
+            while(st.hasMoreTokens() && (delim = st.nextToken()).equals(",")) {
+                categs.add("");
+            }
+
+            nameDelims.add(new Pair<>(name, categs));
+            name = delim;
+        } while (st.hasMoreTokens());
+    }
+
+    void parse() {
+        ArrayList<Pair<String, ArrayList<String>>> nameDelims = new ArrayList<>();
         try {
-            //Initial info from first line
-            StringTokenizer st = new StringTokenizer(br.readLine(), ",", true);
-            st.nextToken();
-            st.nextToken();
-            st.nextToken();
-            ArrayList<Pair<String, ArrayList<String>>> nameDelims = new ArrayList<Pair<String, ArrayList<String>>>();
-            String name = st.nextToken();
-            String line;
-            do {
-                String delim = "";
-                ArrayList<String> categs = new ArrayList();
-                while(st.hasMoreTokens() && (delim = st.nextToken()).equals(",")) {
-                    categs.add("");
-                }
-
-                nameDelims.add(new Pair<String, ArrayList<String>>(name, categs));
-                name = delim;
-            } while (st.hasMoreTokens());
-
+            parseFirstLine(nameDelims);
+            StringTokenizer st;
+            String line, name;
             //Actual categories
             st = new StringTokenizer(br.readLine(), ",");
             st.nextToken();
@@ -93,6 +87,7 @@ public class SurveyAndAgeGroupParser {
                     String query = SurveyDBConstants.INSERT;
                     query += "\'" + survey_counter + "\', ";
                     query += "\'" + company + "\', ";
+                    query += "\'" + year + "\', ";
                     query += "\'" + country + "\', ";
                     query += "\'" + id + "\');\n";
 

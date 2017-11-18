@@ -17,6 +17,9 @@ public class Survey{
     @Column(name = "country")
     private String country;
 
+    @Column(name = "year")
+    private String year;
+
     @Column(name = "company")
     private String company;
 
@@ -32,6 +35,14 @@ public class Survey{
     public Survey(String country, String company) {
         this.country = country;
         this.company = company;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public Long getId() {
@@ -71,6 +82,7 @@ public class Survey{
         return "Survey{" +
                 "id=" + id +
                 ", country='" + country + '\'' +
+                ", year='" + year + '\'' +
                 ", company='" + company + '\'' +
                 ", agegroups=" + agegroups +
                 '}';

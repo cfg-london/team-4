@@ -1,3 +1,24 @@
-<p>
-  indicator works!
-</p>
+    <head>
+        <title></title>
+    </head>
+    <body>
+ 
+        <div ng-controller="CountryCntrl">
+            <div>
+                Generic 1: <select id="city" ng-model="city"><option value=''>Select</option> <option ng-repeat="city in cities" value='{{G1Indicators}}'></option></select> 
+            </div>
+            <div>
+                Generic 2: <select id="city" ng-model="city"><option value=''>Select</option> <option ng-repeat="city in cities" value='{{G2Indicators}}'></option></select> 
+            </div>
+            <div>
+                Generic 3: <select id="city" ng-model="city"><option value=''>Select</option> <option ng-repeat="city in cities" value='{{G2Indicators}}'></option></select>        
+            </div>
+        </div>
+        
+        <div ng-controller="Age">
+            <div>
+                Age: <select id="age" ng-model="city"><option value=''>Select</option> <option ng-repeat="ages" value='{{Ages}}'></option></select> 
+            </div>
+        </div>
+</body>
+            

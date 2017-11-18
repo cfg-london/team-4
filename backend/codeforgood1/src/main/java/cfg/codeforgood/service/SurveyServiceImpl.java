@@ -26,5 +26,9 @@ public class SurveyServiceImpl implements SurveyServiceItf {
     public List<String> findDistinctCountries() {
         return surveyRepository.findAllDistinctCountries();
     }
+
+    public List<Survey> getByCountry(String country) {
+        return surveyRepository.findAgesByCountry(country);
+    }
 }
 

@@ -26,4 +26,8 @@ public class IndicatorServiceImpl implements IndicatorsServiceItf{
     public List<String> getDistinctCategories() {
         return indicatorRepository.findDistinctCategories();
     }
+
+    public List<Indicator> getByType(String type) {
+        return indicatorRepository.findIndiByType(type);
+    }
 }

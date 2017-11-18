@@ -35,6 +35,7 @@ public class SurveyController {
         method = RequestMethod.GET)
     @ResponseBody
     public List<String> getDistinctCountries() {
+
         return surveyService.findDistinctCountries();
     }
 }

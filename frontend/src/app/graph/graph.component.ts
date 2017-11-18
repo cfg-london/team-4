@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @Component({
@@ -7,6 +7,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
+
+  @Input() data: object;
 
   single: any[];
   multi: any[];
@@ -35,16 +37,7 @@ export class GraphComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.single = [
-      {
-        "name": "go to school",
-        "value": 30
-      },
-      {
-        "name": "graduate",
-        "value": 5
-      }
-    ]
+    this.data = [];
   }
 
 }

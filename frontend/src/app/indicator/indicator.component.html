@@ -8,4 +8,4 @@
 <div *ngFor="let ageGroup of ageGroups" (click)="selectAgeGroup(ageGroup)">
   {{ageGroup}}
 </div>
-  <app-graph></app-graph>
+  <app-graph [data]="graphInfo"></app-graph>

@@ -53,7 +53,17 @@ export class DataService {
 
   // // list of [indicatorname, percentage]
   getInfoByCategoryAndAgeGroup(category: string, ageGroup: string) {
-
-    return this.getInfoByCategory(category).map(info => [info[0], info[1][ageGroup]]); //.filter != 0
+    console.log("getting info for "+ category + " and " + ageGroup);
+    return this.getInfoByCategory(category).map(info => {
+      console.log(info[1][ageGroup]);
+      return {
+        "name"
+      :
+        info[0],
+          "value"
+      :
+        info[1][ageGroup]
+      }
+    }); //.filter != 0
   }
 }

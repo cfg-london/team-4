@@ -32,6 +32,7 @@ public class IndicatorParser {
                 StringTokenizer st = new StringTokenizer(line, "\t");
                 String name = st.nextToken();
                 String description = st.nextToken();
+                String type = st.nextToken();
 
                 hmIndicator.put(name, counter);
 
@@ -39,14 +40,6 @@ public class IndicatorParser {
                 myquery += "\'" + counter + "\', ";
                 myquery += "\'" + description + "\', ";
                 myquery += "\'" + name + "\', ";
-
-                String type;
-                if (description.contains("Percentage")) {
-                    type = "percentage";
-                }
-                else {
-                    type = "ratio";
-                }
                 myquery += "\'" + type + "\');\n";
 
                 bw.append(myquery);

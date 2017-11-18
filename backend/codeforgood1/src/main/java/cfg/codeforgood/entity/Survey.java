@@ -32,9 +32,15 @@ public class Survey{
     @JoinColumn(name = "indicator_id_fk")
     private Indicator indicator;
 
-    public Survey(String country, String company) {
+    public Survey() {
+
+    }
+
+    public Survey(String country, String company, Set<AgeGroup> agegroups, Indicator indicator) {
         this.country = country;
         this.company = company;
+        this.agegroups = agegroups;
+        this.indicator = indicator;
     }
 
     public String getYear() {

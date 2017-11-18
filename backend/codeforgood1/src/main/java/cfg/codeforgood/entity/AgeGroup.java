@@ -62,4 +62,14 @@ public class AgeGroup {
     public void setValue(float value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "AgeGroup{" +
+                "id=" + id +
+                ", agerange='" + agerange + '\'' +
+                ", value=" + value +
+                ", survey=" + survey +
+                '}';
+    }
 }

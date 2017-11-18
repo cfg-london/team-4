@@ -1,11 +1,13 @@
 <body ng-app="app" ng-controller="selectDropdown">
-            <div>
+    <div>
+            <center>
                 Country:
                 <select ng-model="userSelect" ng-options=" item as item for item in a">
                     <option value="">--Select--</option>
                 </select>
                 <input type="button" value="submit" ng-click="checkselection()">
                 <span color:red>{{msg}}</span>
+                </center>
             </div>
         </body>
 

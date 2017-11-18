@@ -21,4 +21,9 @@ public class IndicatorServiceImpl implements IndicatorsServiceItf{
     public List<Indicator> getAll() {
         return indicatorRepository.findAll();
     }
+
+    @Override
+    public List<String> getDistinctCategories() {
+        return indicatorRepository.findDistinctCategories();
+    }
 }

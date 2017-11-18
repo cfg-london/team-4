@@ -29,4 +29,12 @@ public class SurveyController {
     public List<Survey> getAllSurveys() {
         return surveyService.getAll();
     }
+
+    @RequestMapping(value = "/distinctCountries",
+        produces = MediaType.APPLICATION_JSON_VALUE,
+        method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> getDistinctCountries() {
+        return surveyService.findDistinctCountries();
+    }
 }

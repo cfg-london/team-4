@@ -21,5 +21,10 @@ public class SurveyServiceImpl implements SurveyServiceItf {
     public List<Survey> getAll() {
         return surveyRepository.findAll();
     }
+
+    @Override
+    public List<String> findDistinctCountries() {
+        return surveyRepository.findAllDistinctCountries();
+    }
 }
 

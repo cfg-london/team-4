@@ -27,4 +27,13 @@ public class IndicatorController {
     public List<Indicator> getAllIndicators() {
         return indicatorService.getAll();
     }
+
+    @RequestMapping(value = "/distinctCat",
+        produces = MediaType.APPLICATION_JSON_VALUE,
+        method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> getDistinctCat() {
+        return indicatorService.getDistinctCategories();
+    }
+
 }

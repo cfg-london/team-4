@@ -30,4 +30,10 @@ public class AgeGroupController {
         return ageGroupService.getAll();
     }
 
+//    @RequestMapping(value = "/distinctAges",
+//        produces = MediaType.APPLICATION_JSON_VALUE,
+//        method = RequestMethod.GET)
+//    public List<AgeGroup> getDistinctAgeGroups() {
+//        return ageGroupService.getDistinctAges();
+//    }
 }

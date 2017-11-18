@@ -8,4 +8,6 @@ import java.util.List;
 @Service
 public interface SurveyServiceItf {
     List<Survey> getAll();
+
+    List<String> findDistinctCountries();
 }
